@@ -9,6 +9,7 @@ namespace ConsoleApplication1
 {
     class DisposePatternExample : IDisposable
     {
+        // Flag: Has Dispose already been called?
         bool _disposed = false;
         private IntPtr _umResource;
         private const string InstanceName = "DisposePatternExample";
@@ -17,9 +18,7 @@ namespace ConsoleApplication1
         {
             _umResource = Marshal.StringToCoTaskMemAuto(InstanceName);
         }
-
-
-        // Flag: Has Dispose already been called?
+ 
 
         // Public implementation of Dispose pattern callable by consumers.
         public void Dispose()
